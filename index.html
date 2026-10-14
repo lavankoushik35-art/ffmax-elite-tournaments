@@ -1,1 +1,134 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF MAX ELITE | Tournament Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header class="navbar">
+        <div class="logo">⚡ FF MAX <span>ELITE</span></div>
+        <div class="nav-buttons">
+            <button id="soundBtn" class="nav-btn">🔊 Sound OFF</button>
+            <button id="adminBtn" class="nav-btn">🔐 Admin</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow">◆ THE ULTIMATE BATTLE ARENA ◆</p>
+        <h1>ENTER THE <span>ELITE</span><br>ARENA</h1>
+        <p class="hero-description">
+            Assemble your squad. Enter the battlefield.
+            Compete in Free Fire MAX tournaments and fight for glory!
+        </p>
+        <button class="gold-btn" onclick="scrollToTournaments()">
+            EXPLORE TOURNAMENTS ↓
+        </button>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h2 id="totalCount">0</h2>
+            <p>TOURNAMENTS</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="activeCount">0</h2>
+            <p>UPCOMING</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="completedCount">0</h2>
+            <p>COMPLETED ✓</p>
+        </div>
+    </section>
+
+    <main id="tournaments">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR NEXT BATTLE</p>
+                <h2>🏆 Premium Tournaments</h2>
+            </div>
+            <span class="live-badge">● MATCH BOARD</span>
+        </div>
+
+        <div id="tournamentList" class="tournament-grid"></div>
+    </main>
+
+    <section id="loginPanel" class="panel hidden">
+        <h2>🔐 ADMIN LOGIN</h2>
+        <p>Enter your administrator credentials.</p>
+
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password" required>
+
+            <button type="submit" class="gold-btn">LOGIN</button>
+            <button type="button" id="cancelLogin" class="nav-btn">CANCEL</button>
+        </form>
+
+        <p class="warning">
+            Demo login only. A real secure admin panel needs server-side
+            authentication; credentials in a static website can be discovered.
+        </p>
+    </section>
+
+    <section id="adminPanel" class="panel hidden">
+        <div class="admin-heading">
+            <h2>⚙️ Tournament Control</h2>
+            <button id="logoutBtn" class="nav-btn">LOGOUT</button>
+        </div>
+
+        <form id="tournamentForm">
+            <input type="hidden" id="editId">
+
+            <label for="tName">Tournament Name</label>
+            <input id="tName" type="text" placeholder="Elite Squad Clash" required>
+
+            <label for="tTime">Tournament Time</label>
+            <input id="tTime" type="datetime-local" required>
+
+            <label for="tCode">Team Code / Room ID</label>
+            <input id="tCode" type="text" placeholder="Enter team code">
+
+            <label for="tPrize">Prize</label>
+            <input id="tPrize" type="text" placeholder="₹500" required>
+
+            <button type="submit" id="saveBtn" class="gold-btn">
+                ＋ PUBLISH TOURNAMENT
+            </button>
+            <button type="button" id="clearBtn" class="nav-btn">CLEAR</button>
+        </form>
+
+        <h3 class="manage-title">Manage Tournaments</h3>
+        <div id="adminList"></div>
+
+        <p class="warning">
+            Tournament data is saved in this browser only. Other visitors
+            will not receive your changes without a shared database.
+        </p>
+    </section>
+
+    <footer>
+        <p>⚡ FF MAX ELITE</p>
+        <p>PLAY FAIR • PLAY TO WIN</p>
+        <small>Fan-made tournament hub. Not affiliated with Garena.</small>
+    </footer>
+
+    <a
+        class="help-button"
+        href="https://wa.me/919381687402?text=Hi%20FF%20MAX%20ELITE%2C%20I%20need%20tournament%20help."
+        target="_blank"
+        rel="noopener noreferrer"
+    >💬 HELP</a>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
